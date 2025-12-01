@@ -1,0 +1,4 @@
+(library
+ (name aoc_25))
+
+(env (release (ocamlopt_flags (:standard -O3))))

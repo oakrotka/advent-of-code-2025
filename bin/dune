@@ -1,0 +1,6 @@
+(executable
+ (name day01_1)
+ (public_name day01-1)
+ (libraries str aoc_25))
+
+(env (release (ocamlopt_flags (:standard -O3))))
