@@ -2,7 +2,7 @@ let change (instr : string) : int =
     let dir = match instr.[0] with
     | 'L' -> -1
     | 'R' ->  1
-    | _ -> raise Exit
+    | _ -> failwith "invalid input"
     in dir * int_of_string (Str.string_after instr 1) ;;
 
 let step1 (prev, ans) delta : int * int =
