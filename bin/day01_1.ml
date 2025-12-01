@@ -18,7 +18,7 @@ let step2 (prev, ans) delta : int * int =
     let full_spins = abs (delta / 100) in
 
     (* Multiplication by `delta` to set the right sign *)
-    let passed_zero = delta * prev > delta * next in
+    let passed_zero = delta * (prev - next) > 0 in
     let end_at_zero = next == 0 in
     let partial_spin = prev != 0 && (end_at_zero || passed_zero) in
 
@@ -26,8 +26,8 @@ let step2 (prev, ans) delta : int * int =
     (next, ans + clicks) ;;
 
 let calc step lines =
-    let deltas = List.map change lines in
-    List.fold_left step (50, 0) deltas
+    let deltas = Seq.map change lines in
+    Seq.fold_left step (50, 0) deltas
     |> fun (_, x) -> x ;;
 
 Aoc_25.Gen_exec.exec @@ fun ex lines ->
