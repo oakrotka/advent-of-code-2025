@@ -4,5 +4,8 @@ lib: [
   "_build/install/default/lib/aoc-25/opam"
 ]
 bin: [
-  "_build/install/default/bin/day01-1"
+  "_build/install/default/bin/day01"
+]
+doc: [
+  "_build/install/default/doc/aoc-25/LICENSE"
 ]
